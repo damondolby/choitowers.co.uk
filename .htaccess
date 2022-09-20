@@ -1,0 +1,25 @@
+#IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+#AuthName gpmtrust.org
+
+
+#RewriteEngine on
+
+
+#RewriteCond %{REQUEST_URI} !^/gpmtrust.org
+#RewriteRule ^(.*)$ /gpmtrust.org/$1 [L]
+
+#RewriteCond %{HTTP_HOST} ^(www.)?londonfoxes.com$   
+#RewriteRule !^londonfoxes.com/ londonfoxes.com%{REQUEST_URI} [L]
+
+RewriteEngine On
+#RewriteCond %{REQUEST_URI} /gpmtrust.org
+RewriteCond %{HTTP_HOST} ^(www.)?gpmtrust.org$  
+RewriteCond %{REQUEST_URI} !^/gpmtrust.org
+RewriteRule ^(.*)$ /gpmtrust.org/$1 [L]
+
+
+#RewriteCond %{HTTP_HOST} ^(www.)?londonfoxes.com$   
+#RewriteRule !^londonfoxes.com/ londonfoxes.com/index.html%{REQUEST_URI} [L]
+
+DirectoryIndex default.html index.html
